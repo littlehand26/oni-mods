@@ -42,7 +42,7 @@
 
 游戏内 **MODS → 暗物质太空服 → 配置齿轮**，可单独开关每个功能、调整数值（属性加成、飞行速度、连锁挖掘半径等）。改动需重启游戏生效。
 
-依赖 [PLib](https://github.com/peterhaneve/ONIMods)（配置面板由 PLib 提供）。
+配置面板基于 [PLib](https://github.com/peterhaneve/ONIMods)，已用 ILRepack 合并进 mod，无需额外安装。
 
 ## 构建
 
@@ -57,7 +57,8 @@ dotnet build -c Release -p:GameLibsPath="<游戏 OxygenNotIncluded_Data/Managed 
 ```
 
 - 目标框架 `net48`（匹配当前游戏自带的 0Harmony）
-- 构建产物自动复制到 `mods/Dev/DarkMatterSuit/`（含 PLib.dll）
+- 构建时用 `ilrepack`（`dotnet tool install -g dotnet-ilrepack`）把 PLib 合并进 dll
+- 构建产物自动复制到 `mods/Dev/DarkMatterSuit/`（单个自包含 dll）
 
 ## 许可
 

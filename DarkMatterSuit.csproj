@@ -50,9 +50,18 @@
     </Reference>
   </ItemGroup>
 
-  <Target Name="DeployMod" AfterTargets="Build">
+  <!-- 把 PLib 合并进 mod dll（避免发布给别人时与其他 mod 的 PLib 版本冲突）。
+       用 dotnet 全局工具 ilrepack（dotnet tool install -g dotnet-ilrepack）。 -->
+  <Target Name="MergePLib" AfterTargets="Build">
+    <Exec Command="ilrepack --out:&quot;$(TargetPath)&quot; --lib:&quot;$(GameLibsPath)&quot; &quot;$(TargetPath)&quot; &quot;$(TargetDir)PLib.dll&quot;" />
+    <Delete Files="$(TargetDir)PLib.dll" />
+    <Message Text="Merged PLib into $(TargetName).dll" Importance="high" />
+  </Target>
+
+  <Target Name="DeployMod" AfterTargets="MergePLib">
     <MakeDir Directories="$(ModDeployPath)" />
-    <Copy SourceFiles="$(TargetPath);$(TargetDir)PLib.dll;$(MSBuildProjectDirectory)/mod.yaml;$(MSBuildProjectDirectory)/mod_info.yaml" DestinationFolder="$(ModDeployPath)" />
+    <Delete Files="$(ModDeployPath)/PLib.dll" />
+    <Copy SourceFiles="$(TargetPath);$(MSBuildProjectDirectory)/mod.yaml;$(MSBuildProjectDirectory)/mod_info.yaml" DestinationFolder="$(ModDeployPath)" />
     <Message Text="Deployed to $(ModDeployPath)" Importance="high" />
   </Target>
 
