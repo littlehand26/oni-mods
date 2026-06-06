@@ -22,7 +22,6 @@ A handful of sand condenses the ultimate spacesuit. Wear it, and a duplicant tra
 **Ability / 能力**
 - +1000 to all 12 attributes (adjustable up to 10000) / 全 12 项属性 +1000(可调至 10000)
 - All skills unlocked — no morale penalty / 全技能解锁,不增士气期望
-- All research completed on equip / 穿上即科技全开
 - Never removed at suit checkpoints / 永不在检查点被脱下
 
 **Movement / 移动**
@@ -53,7 +52,7 @@ Open **Options** on the mod entry. Every feature is a toggle or slider; UI auto-
 
 ## Compatibility / 兼容性
 
-- Base Game & Spaced Out! / 本体与太空领主 DLC
+- Base Game & Spaced Out! / 本体与眼冒金星 DLC
 - PLib bundled in — no extra dependency / 已内置 PLib,无需额外依赖
 
 ## Source / 源码

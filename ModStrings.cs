@@ -60,8 +60,6 @@ namespace DarkMatterSuit
         public const string OPT_ATTR_TIP = "STRINGS.DARKMATTER.OPT.ATTR_TIP";
         public const string OPT_SKILLS = "STRINGS.DARKMATTER.OPT.SKILLS";
         public const string OPT_SKILLS_TIP = "STRINGS.DARKMATTER.OPT.SKILLS_TIP";
-        public const string OPT_RESEARCH = "STRINGS.DARKMATTER.OPT.RESEARCH";
-        public const string OPT_RESEARCH_TIP = "STRINGS.DARKMATTER.OPT.RESEARCH_TIP";
         public const string OPT_NOUNEQUIP = "STRINGS.DARKMATTER.OPT.NOUNEQUIP";
         public const string OPT_NOUNEQUIP_TIP = "STRINGS.DARKMATTER.OPT.NOUNEQUIP_TIP";
         public const string OPT_FLIGHT = "STRINGS.DARKMATTER.OPT.FLIGHT";
@@ -97,8 +95,6 @@ namespace DarkMatterSuit
             Strings.Add(OPT_ATTR_TIP, L("Bonus added to all 12 base attributes (0 = off)", "全部 12 项基础属性加成值（0 = 关闭）"));
             Strings.Add(OPT_SKILLS, L("Unlock All Skills", "全技能解锁"));
             Strings.Add(OPT_SKILLS_TIP, L("Wearer is treated as having every skill perk (no morale expectation increase)", "穿戴者视为拥有全部技能 perk（不增加士气期望）"));
-            Strings.Add(OPT_RESEARCH, L("Unlock All Research", "科技全开"));
-            Strings.Add(OPT_RESEARCH_TIP, L("Complete all research once when the suit is equipped", "穿上服时一次性完成全部研究"));
             Strings.Add(OPT_NOUNEQUIP, L("Never Remove", "永不脱下"));
             Strings.Add(OPT_NOUNEQUIP_TIP, L("Not forced off at suit checkpoints", "经过太空服检查点不被强制脱衣"));
             Strings.Add(OPT_FLIGHT, L("Flight", "飞行"));

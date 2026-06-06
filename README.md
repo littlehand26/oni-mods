@@ -1,6 +1,6 @@
 # 暗物质太空服 (Dark Matter Suit)
 
-> An overpowered "god suit" mod for **Oxygen Not Included** — one suit that frees a duplicant from all survival needs, grants flight, maxes every attribute, unlocks all skills/research, and speed-digs. Every feature is toggleable in the in-game mod config (PLib).
+> An overpowered "god suit" mod for **Oxygen Not Included** — one suit that frees a duplicant from all survival needs, grants flight, maxes every attribute, unlocks all skills, and speed-digs. Every feature is toggleable in the in-game mod config (PLib).
 
 一件缺氧（Oxygen Not Included）的「无敌太空服」Mod。穿上后复制人摆脱一切生存需求，并获得飞行、全属性、全技能、快速挖掘等能力。所有功能都能在游戏内 Mod 配置面板里单独开关。
 
@@ -19,7 +19,6 @@
 **能力**
 - 全 12 项基础属性加成（默认 +1000，可调 0~10000）
 - 全技能解锁（视为拥有全部 perk，且不增加士气期望）
-- 科技全开（穿上时一次性完成全部研究）
 - 永不脱下（经过太空服检查点不被强制脱衣）
 
 **移动**

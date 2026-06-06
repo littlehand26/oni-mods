@@ -49,10 +49,6 @@ namespace DarkMatterSuit
         public bool AllSkills { get; set; } = true;
 
         [JsonProperty]
-        [Option(ModStrings.OPT_RESEARCH, ModStrings.OPT_RESEARCH_TIP, ModStrings.CAT_ABILITY)]
-        public bool UnlockResearch { get; set; } = true;
-
-        [JsonProperty]
         [Option(ModStrings.OPT_NOUNEQUIP, ModStrings.OPT_NOUNEQUIP_TIP, ModStrings.CAT_ABILITY)]
         public bool NeverUnequip { get; set; } = true;
 

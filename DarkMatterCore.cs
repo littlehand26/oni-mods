@@ -43,36 +43,6 @@ namespace DarkMatterSuit
             {
                 GrantMissingPerks();
             }
-            if (ModConfig.Instance.UnlockResearch)
-            {
-                UnlockAllResearch();
-            }
-        }
-
-        // 科技全开：穿上服的瞬间，殖民地获得暗物质太空服蕴含的全部知识。
-        // 幂等（已完成的跳过）；读档重新穿戴时再跑一遍也无害。
-        private static void UnlockAllResearch()
-        {
-            if (Research.Instance == null)
-            {
-                return;
-            }
-            try
-            {
-                foreach (Tech tech in Db.Get().Techs.resources)
-                {
-                    TechInstance techInstance = Research.Instance.GetOrAdd(tech);
-                    if (techInstance != null && !techInstance.IsComplete())
-                    {
-                        techInstance.Purchased();
-                        Game.Instance.Trigger((int)GameHashes.ResearchComplete, tech);
-                    }
-                }
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogWarning("[DarkMatterSuit] unlock research degraded: " + e);
-            }
         }
 
         private void OnUnequipped(object data)
