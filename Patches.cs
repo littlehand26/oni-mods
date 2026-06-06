@@ -14,6 +14,9 @@ namespace DarkMatterSuit
         {
             public static void Postfix()
             {
+                // 配置面板字符串（按当前语言填入，供 PLib [Option] 的 STRINGS key 查询）
+                ModStrings.RegisterConfigStrings();
+
                 // 暗物质服（装备）字符串
                 string prefix = "STRINGS.EQUIPMENT.PREFABS." + DarkMatterSuitConfig.ID.ToUpperInvariant() + ".";
                 Strings.Add(new[] { prefix + "NAME", ModStrings.NAME });
