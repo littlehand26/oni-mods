@@ -35,6 +35,14 @@ namespace DarkMatterSuit
         public bool Regen { get; set; } = true;
 
         [JsonProperty]
+        [Option(ModStrings.OPT_INVINCIBLE, ModStrings.OPT_INVINCIBLE_TIP, ModStrings.CAT_SURVIVAL)]
+        public bool Invincible { get; set; } = true;
+
+        [JsonProperty]
+        [Option(ModStrings.OPT_DISEASE, ModStrings.OPT_DISEASE_TIP, ModStrings.CAT_SURVIVAL)]
+        public bool DiseaseImmunity { get; set; } = true;
+
+        [JsonProperty]
         [Option(ModStrings.OPT_BIONIC, ModStrings.OPT_BIONIC_TIP, ModStrings.CAT_SURVIVAL)]
         public bool BionicSupport { get; set; } = true;
 

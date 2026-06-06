@@ -16,6 +16,8 @@ A handful of sand condenses the ultimate spacesuit. Wear it, and a duplicant tra
 - Freezes stamina, calories, bladder & stress / 冻结体力、卡路里、膀胱、压力
 - No sleep needed — works around the clock / 不需睡眠,全天候工作
 - Full environment protection — magma, cold, radiation, debuffs / 全环境免疫:岩浆、严寒、辐射、各类 debuff
+- Invincible — takes no damage at all / 免伤,完全无敌
+- Disease & germ immunity / 免疫疾病与病菌
 - Slow health regeneration / 缓慢回血
 - **Bionic duplicant support** (battery/oxygen/oil/gunk handled) / **适配仿生复制人**(电池/氧气/机油/淤泥全包)
 

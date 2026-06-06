@@ -54,6 +54,10 @@ namespace DarkMatterSuit
         public const string OPT_ENV_TIP = "STRINGS.DARKMATTER.OPT.ENV_TIP";
         public const string OPT_REGEN = "STRINGS.DARKMATTER.OPT.REGEN";
         public const string OPT_REGEN_TIP = "STRINGS.DARKMATTER.OPT.REGEN_TIP";
+        public const string OPT_INVINCIBLE = "STRINGS.DARKMATTER.OPT.INVINCIBLE";
+        public const string OPT_INVINCIBLE_TIP = "STRINGS.DARKMATTER.OPT.INVINCIBLE_TIP";
+        public const string OPT_DISEASE = "STRINGS.DARKMATTER.OPT.DISEASE";
+        public const string OPT_DISEASE_TIP = "STRINGS.DARKMATTER.OPT.DISEASE_TIP";
         public const string OPT_BIONIC = "STRINGS.DARKMATTER.OPT.BIONIC";
         public const string OPT_BIONIC_TIP = "STRINGS.DARKMATTER.OPT.BIONIC_TIP";
         public const string OPT_ATTR = "STRINGS.DARKMATTER.OPT.ATTR";
@@ -89,6 +93,10 @@ namespace DarkMatterSuit
             Strings.Add(OPT_ENV_TIP, L("Insulation, max scalding/freezing thresholds, immune to wet/eardrum debuffs", "隔热、烫伤/冻伤阈值拉满、湿身/爆耳等 debuff 免疫"));
             Strings.Add(OPT_REGEN, L("Slow Regeneration", "缓慢回血"));
             Strings.Add(OPT_REGEN_TIP, L("Continuously restore health", "持续恢复生命值"));
+            Strings.Add(OPT_INVINCIBLE, L("Invincible", "免伤（无敌）"));
+            Strings.Add(OPT_INVINCIBLE_TIP, L("Take no damage at all — falling, heat, radiation, combat, etc.", "完全不受伤害：坠落、过热、辐射、战斗等"));
+            Strings.Add(OPT_DISEASE, L("Disease & Germ Immunity", "免疫疾病与病菌"));
+            Strings.Add(OPT_DISEASE_TIP, L("Never gets sick, food poisoning, or germ infection", "永不生病、食物中毒或受病菌感染"));
             Strings.Add(OPT_BIONIC, L("Bionic Duplicant Support", "适配仿生复制人"));
             Strings.Add(OPT_BIONIC_TIP, L("For bionic wearers: refill battery / oxygen tank / oil, clear gunk", "仿生人穿戴时补满电池/氧气罐/机油、清零淤泥"));
             Strings.Add(OPT_ATTR, L("All-Attribute Bonus", "全属性加成"));

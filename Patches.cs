@@ -284,5 +284,34 @@ namespace DarkMatterSuit
                 return true;
             }
         }
+
+        // 免伤（真无敌）：所有伤害源都经 Health.Damage（坠落/过热/辐射/战斗等），
+        // 穿戴者直接跳过扣血。
+        [HarmonyPatch(typeof(Health), nameof(Health.Damage))]
+        public static class Health_Damage_Patch
+        {
+            public static bool Prefix(Health __instance)
+            {
+                if (ModConfig.Instance.Invincible && __instance.gameObject.HasTag(DarkMatterSuitConfig.WEARER_TAG))
+                {
+                    return false; // 跳过扣血
+                }
+                return true;
+            }
+        }
+
+        // 免疫疾病与病菌：患病统一经 Sicknesses.Infect，穿戴者直接跳过感染。
+        [HarmonyPatch(typeof(Klei.AI.Sicknesses), nameof(Klei.AI.Sicknesses.Infect))]
+        public static class Sicknesses_Infect_Patch
+        {
+            public static bool Prefix(Klei.AI.Sicknesses __instance)
+            {
+                if (ModConfig.Instance.DiseaseImmunity && __instance.gameObject.HasTag(DarkMatterSuitConfig.WEARER_TAG))
+                {
+                    return false; // 跳过感染
+                }
+                return true;
+            }
+        }
     }
 }
