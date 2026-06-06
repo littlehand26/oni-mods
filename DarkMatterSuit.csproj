@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <AssemblyName>DarkMatterSuit</AssemblyName>
+    <RootNamespace>DarkMatterSuit</RootNamespace>
+    <Version>0.1.0</Version>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- macOS Steam 安装路径；其他机器构建时用 -p:GameLibsPath=... 覆盖 -->
+    <GameLibsPath Condition="'$(GameLibsPath)' == ''">$(HOME)/Library/Application Support/Steam/steamapps/common/OxygenNotIncluded/OxygenNotIncluded.app/Contents/Resources/Data/Managed</GameLibsPath>
+    <ModDeployPath Condition="'$(ModDeployPath)' == ''">$(HOME)/Library/Application Support/unity.Klei.Oxygen Not Included/mods/Dev/DarkMatterSuit</ModDeployPath>
+  </PropertyGroup>
+
+  <Target Name="ValidateGameLibsPath" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(GameLibsPath)')" Text="GameLibsPath not found: $(GameLibsPath)" />
+  </Target>
+
+  <ItemGroup>
+    <!-- net472 reference assemblies，使 macOS 上无需 Mono 即可编译 -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="PLib" Version="4.13.0" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(GameLibsPath)/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>$(GameLibsPath)/Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(GameLibsPath)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameLibsPath)/UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GameLibsPath)/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GameLibsPath)/UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(GameLibsPath)/Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="DeployMod" AfterTargets="Build">
+    <MakeDir Directories="$(ModDeployPath)" />
+    <Copy SourceFiles="$(TargetPath);$(TargetDir)PLib.dll;$(MSBuildProjectDirectory)/mod.yaml;$(MSBuildProjectDirectory)/mod_info.yaml" DestinationFolder="$(ModDeployPath)" />
+    <Message Text="Deployed to $(ModDeployPath)" Importance="high" />
+  </Target>
+
+</Project>
